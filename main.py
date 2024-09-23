@@ -1,4 +1,9 @@
 import random
+import string
+
+f = open("fe.txt","w",encoding="utf-8")
+lines = f.writelines
+
 
 print("Válassz az alábbi lehetőségek közül:\n"
           "1. Adott darabszámú véletlen egész számok generálása adott határok között.\n"
@@ -16,18 +21,14 @@ match lehetosegek:
         while len(Szamok) < darabSzam:
             Szamok.append(random.randint(kisSzam,nagySzam))
     case 2:
-        betuk = "abcedfghijklmnopqrstuvwxyz"
-        for betu in betuk:
-            
-
-        darabSzoveg = int(input("Hány darab szöveg generálódjon?: "))
-        
+        betuk = "abcedfghijklmnopqrstuvwxyzABCEDFGHIJKLMNOPQRSTUVWXYZ"
         szovegek = []
+        darabSzoveg = int(input("Hány darab szöveg generálódjon?: "))
         while len(szovegek) < darabSzoveg:
-            szovegek.append(''.join(random.sample(betuk,len(betuk))))
+            szavak = []
+            for _ in range(random.randint(1,20)):
+                szavak.append(random.choice(betuk))
+            szavak = "".join(szavak)
+            szovegek.append(szavak)
+
 print(szovegek)
-
-
-
-  
-
