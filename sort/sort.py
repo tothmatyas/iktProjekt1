@@ -11,12 +11,12 @@ if arr[0].isdigit():
         for i in range(len(arr)-1):
             if arr[i] > arr[i+1] :
                 arr[i], arr[i+1] = arr[i+1], arr[i]
-
 else:
     for j in range(len(arr)):
         for i in range(len(arr)-1):
             if  len(arr[i]) > len(arr[i+1]) :
                 arr[i], arr[i+1] = arr[i+1], arr[i]
+
 
 print("1: Növekvő sorrend | 2: Csökkenő sorrend")
 inp = int(input())
