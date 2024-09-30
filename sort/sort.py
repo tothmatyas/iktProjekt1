@@ -18,6 +18,11 @@ else:
             if  len(arr[i]) > len(arr[i+1]) :
                 arr[i], arr[i+1] = arr[i+1], arr[i]
 
+print("1: Növekvő sorrend | 2: Csökkenő sorrend")
+inp = int(input())
+if inp == 2:
+    arr = arr[::-1]
+
 print(arr)
 
 
