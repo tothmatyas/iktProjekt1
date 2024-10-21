@@ -3,6 +3,7 @@ import random
 f = open("ki.txt","w",encoding="utf-8")
 
 while True:
+    #bekéri a feladatot
     print("Válassz az alábbi lehetőségek közül:\n"
             "1. Adott darabszámú véletlen egész számok generálása adott határok között.\n"
             "2. Adott darabszámú véletlen szöveg generálása az angol ABC nagybetűiből vagy kisbetűiből.\n"
@@ -12,7 +13,7 @@ while True:
             "(A teszeléshez először futtatni kell az 1-es vagy 2-es lehetőséget)")
         
     lehetosegek = int(input("Válassz!(1/2/3/4/5): "))
-
+    
     match lehetosegek:
         case 1:
             darabSzam = int(input("Hány darab szám generálódjon?: "))
@@ -23,6 +24,7 @@ while True:
             while len(Szamok) < darabSzam:
                 Szamok.append(random.randint(kisSzam,nagySzam))
             
+            #minimum maximum kiválasztása
             max = 0
             min = 10000000
             for szam in Szamok:
@@ -40,6 +42,7 @@ while True:
                     
             while len(szovegek) < darabSzoveg:
                 szavak = []
+                #legenerálja a szövegeket
                 for _ in range(random.randint(1,20)):
                     szavak.append(random.choice(betuk))
                 szavak = "".join(szavak)
@@ -65,7 +68,7 @@ while True:
                 if int(i) < int(a):
                     a = i
             list(map(int, nums))
-
+            #minimum maximum
             maxEL = 0
             minEL = 10000000
             for num in nums:
