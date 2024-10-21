@@ -11,7 +11,7 @@ arr = arr.split(";")
 #megnézi hogy az arr int vagy string
 arrIsInt = arr[0].isnumeric()
 
-#megnézi hogy helyes e az arr
+#megnézi hogy helyes e az array (nagyon csúnyán)
 if arrIsInt:
     try:
         for i in arr:
@@ -73,7 +73,7 @@ def shuffle(a):
         r = random.randint(0,n-1)
         a[i], a[r] = a[r], a[i]
 
-#dolgok hozáadásának a eljárása
+#dolgok hozáadásának az eljárása
 def insert(thing : str):
     thingIsInt = thing.isnumeric()
 
@@ -84,9 +84,10 @@ def insert(thing : str):
         arr.append(thing)
     
     else:
-        print("🤡")
+        print("nem jó a type")
         exit()
 
+#algoritus kiválasztása
 print("Milyen algoritmust használjon a program? 1: bubble sort | 2:  beszúrásos rendezés | 3: bogosort")
 inp = int(input())
 
@@ -98,18 +99,19 @@ match inp:
     case 3:
         bogoSort(arr)
     case _:
-        print("nem helyes számot adtál meg kopo")
+        print("nem helyes számot adtál")
 
+#array elem hozzáadása
 print("akarsz hozzáadni egy új elemet 1: igen | 2: nem")
 inp = int(input())
 
 match inp:
     case 1:
-        print("akkor adjá")
+        print("az új elem: ")
         insert(input())
         bubbleSort(arr)
 
-
+#eldönti hogy növekvő vagy csökkenő legyen
 print("1:növekvő vagy 2:csökkenő legyen? ")
 inp = int(input())
 
@@ -119,8 +121,8 @@ match inp:
     case 2:
         arr = arr[::-1]
     case _: 
-        #print("nem helyes számot adtál meg")
-        print("🤡")
+        print("nem helyes számot adtál meg")
+        #print("🤡")
         exit()
 
 print(arr)
